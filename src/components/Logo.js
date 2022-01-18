@@ -1,3 +1,5 @@
-const Logo = (props) => <img alt="Logo" src="static/near_icon_wht.svg" {...props} />;
+/** @format */
+
+const Logo = (props) => <img alt='Logo' src='static/icon.svg' {...props} />;
 
 export default Logo;
