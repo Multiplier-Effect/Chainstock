@@ -6,7 +6,7 @@ import { Contract, WalletConnection } from "near-api-js";
 import { parseNearAmount } from "near-api-js/lib/utils/format";
 import { NFTStorage, File } from "nft.storage";
 
-const contractName = "dev-1642573073305-88893865046552";
+const contractName = "dev-1642578662049-35854783086806";
 
 const getNear = async () => {
 	const { keyStores, connect } = nearAPI;
@@ -32,6 +32,7 @@ const setMediaToNftStorage = async (payload) => {
 		description: "",
 		image: payload.fileBuffer,
 	});
+	console.log("metadata: ", metadata);
 	return metadata;
 };
 
