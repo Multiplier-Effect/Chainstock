@@ -69,12 +69,7 @@ class NearClient {
 		}
 		this.contract = new Contract(this.wallet.account(), contractName, {
 			// view methods do not change state but usually return a value
-			viewMethods: [
-				"get_token_ids",
-				"nft_token",
-				"get_sale",
-				"nft_total_supply",
-			],
+			viewMethods: ["nft_tokens", "nft_token", "get_sale", "nft_total_supply"],
 			changeMethods: [
 				"new",
 				"nft_mint",
@@ -122,19 +117,29 @@ export const initNear = () => async (dispatch) => {
 };
 
 export const getNftList = () => async (dispatch) => {
-	if (!nearClient.wallet) {
-		throw Error("not initial near blockchain");
-	}
+	// if (!nearClient.wallet) {
+	// 	throw Error("not initial near blockchain");
+	// }
 	const contract = nearClient.getContract();
+	console.log("contract", contract);
 	// Change total supply to ids tokens to current contract
-	// const totalSupply = parseInt(await contract.nft_total_supply());
-	const tokenIds = await contract.get_token_ids();
+	const totalSupply = parseInt(await contract.nft_total_supply());
+	// const tokenIds = await contract.nft_tokens(
+	// 	{
+	// 		from_index: "0",
+	// 		limit: totalSupply,
+	// 	},
+	// 	GAS,
+	// 	deposit
+	// );
+	// console.log("tokenIds: ", tokenIds);
 	const nftList = [];
-	for (let i = 0; i < tokenIds.length; i++) {
-		const token_id = tokenIds[i];
-		const res = await contract.nft_token({ token_id });
-		nftList.push({ ...res, token_id });
-	}
+	// for (let i = 0; i < tokenIds.length; i++) {
+	const token_id = "1";
+	const res = await contract.nft_token({ token_id });
+	console.log("res", res);
+	nftList.push({ ...res, token_id });
+	// }
 
 	dispatch({
 		type: types.GET_MEME_TOKEN_LIST,
