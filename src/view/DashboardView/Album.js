@@ -26,13 +26,13 @@ const Album = (props) => {
 							<CardMedia
 								sx={{ paddingTop: "100%", backgroundSize: "contain" }}
 								image={el.metadata.media}
-								title={el.name}
+								title={el.metadata.title}
 							/>
 							<CardContent sx={{ flexGrow: 1 }}>
 								<Typography gutterBottom variant='h3' component='h2'>
-									{el.name}
+									{el.metadata.title}
 								</Typography>
-								<Typography>{el.price} NEAR</Typography>
+								<Typography>{el.metadata.extra} NEAR</Typography>
 								<Typography>{el.owner_id}</Typography>
 							</CardContent>
 							<CardActions>
