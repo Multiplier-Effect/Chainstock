@@ -24,9 +24,9 @@ import NavItem from "./NavItem";
 import { logout } from "../redux/action";
 
 const user = {
-	avatar: "/static/images/avatars/smile.jpeg",
-	jobTitle: "Web developer",
-	name: "Mounty goard",
+	avatar: "/static/images/avatars/profile.jpeg",
+	jobTitle: "투자자",
+	name: "여수현",
 };
 
 const items = [
