@@ -1,20 +1,13 @@
 /** @format */
 
-import { NFTStorage, File } from "nft.storage";
+import { NFTStorage } from "nft.storage";
 import { useEffect, useCallback } from "react";
 import { connect } from "react-redux";
 import { getNftList } from "../../redux/action";
 
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import IconButton from "@material-ui/core/IconButton";
-import Link from "@material-ui/core/Link";
 import StockList from "./StockList";
 
 const client = new NFTStorage({
