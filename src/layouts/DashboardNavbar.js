@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState } from "react";
 import { connect } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
@@ -13,51 +15,61 @@ import NotificationsIcon from "@material-ui/icons/NotificationsOutlined";
 import { LogOut as LogoutIcon } from "react-feather";
 import Logo from "../components/Logo";
 import { logout } from "../redux/action";
+import Typography from "@material-ui/core/Typography";
 
 const DashboardNavbar = ({ onMobileNavOpen, logout, ...rest }) => {
-  const [notifications] = useState([]);
+	const [notifications] = useState([]);
 
-  return (
-    <AppBar elevation={0} {...rest}>
-      <Toolbar>
-        <RouterLink to="/">
-          <Logo height="48" weight="48" />
-        </RouterLink>
-        <Box sx={{ flexGrow: "1" }} />
-        <Hidden lgDown>
-          <IconButton color="inherit" size="large">
-            <Badge
-              badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
-            >
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit" size="large" onClick={logout}>
-            <LogoutIcon />
-          </IconButton>
-        </Hidden>
-        <Hidden lgUp>
-          <IconButton color="inherit" onClick={onMobileNavOpen} size="large">
-            <MenuIcon />
-          </IconButton>
-        </Hidden>
-      </Toolbar>
-    </AppBar>
-  );
+	return (
+		<AppBar elevation={0} {...rest}>
+			<Toolbar>
+				<RouterLink to='/'>
+					<Logo height='48' weight='48' />
+				</RouterLink>
+				<RouterLink to='/' padding='20'>
+					<Typography
+						gutterBottom
+						variant='h3'
+						component='h2'
+						padding='20'
+						color='white'>
+						ChainStock
+					</Typography>
+				</RouterLink>
+				<Box sx={{ flexGrow: "1" }} />
+				<Hidden lgDown>
+					<IconButton color='inherit' size='large'>
+						<Badge
+							badgeContent={notifications.length}
+							color='primary'
+							variant='dot'>
+							<NotificationsIcon />
+						</Badge>
+					</IconButton>
+					<IconButton color='inherit' size='large' onClick={logout}>
+						<LogoutIcon />
+					</IconButton>
+				</Hidden>
+				<Hidden lgUp>
+					<IconButton color='inherit' onClick={onMobileNavOpen} size='large'>
+						<MenuIcon />
+					</IconButton>
+				</Hidden>
+			</Toolbar>
+		</AppBar>
+	);
 };
 
 DashboardNavbar.propTypes = {
-  onMobileNavOpen: PropTypes.func,
+	onMobileNavOpen: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
-  title: state.app.title,
+	title: state.app.title,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout()),
+	logout: () => dispatch(logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardNavbar);

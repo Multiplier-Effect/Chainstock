@@ -31,24 +31,19 @@ const user = {
 
 const items = [
 	{
-		href: "/dashboard",
+		href: "/market",
 		icon: BarChartIcon,
-		title: "Dashboard",
+		title: "Market",
 	},
 	{
-		href: "/account",
+		href: "/mypage",
 		icon: UserIcon,
-		title: "Account",
-	},
-	{
-		href: "/my_tokens",
-		icon: ShoppingBagIcon,
-		title: "My tokens",
+		title: "My page",
 	},
 	{
 		href: "/create",
 		icon: FilePlusIcon,
-		title: "Create NFT",
+		title: "Create Stock",
 	},
 ];
 
