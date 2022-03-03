@@ -89,6 +89,7 @@ class NearClient {
 	login = () => {
 		if (!this.wallet) {
 			throw Error("not initial near blockchain");
+			console.log("ch", this);
 		}
 		this.wallet.requestSignIn();
 	};
@@ -116,21 +117,27 @@ export const initNear = () => async (dispatch) => {
 	return wallet;
 };
 
+export const mint = () => async (dispatch) => {};
+
 export const getNftList = () => async (dispatch) => {
 	if (!nearClient.wallet) {
 		throw Error("not initial near blockchain");
 	}
 
 	const contract = nearClient.getContract();
+	const test = await contract.nft_tokens();
 	// Change total supply to ids tokens to current contract
 	const totalSupply = parseInt(await contract.nft_total_supply());
+	console.log("total Supply", totalSupply);
+	console.log("nft_tokens: ", test);
 
 	const nftList = [];
-	for (let i = 1; i <= totalSupply; i++) {
+	for (let i = 2; i <= 25; i++) {
 		const res = await contract.nft_token({ token_id: i.toString() });
 		console.log("res", res);
 		nftList.push({ ...res, i });
 	}
+	console.log("list: ", nftList);
 
 	dispatch({
 		type: types.GET_MEME_TOKEN_LIST,
@@ -184,10 +191,11 @@ export const registerNft = (payload) => async (dispatch) => {
 	const GAS = 200000000000000;
 	const deposit = parseNearAmount("1");
 	const contract = nearClient.getContract();
+	const totalSupply = parseInt(await contract.nft_total_supply());
 	await contract.nft_mint(
 		{
-			token_id: `token-${Date.now()}`,
-			metadata: path,
+			token_id: totalSupply + 1,
+			metadata: { media: path, title: "Toss", description: "test" },
 		},
 		GAS,
 		deposit
