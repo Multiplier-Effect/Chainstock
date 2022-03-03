@@ -29,11 +29,16 @@ const AccountView = (props) => {
 	}, [getNftListAccount]);
 
 	return (
-		<Container sx={{ paddingTop: "24px", paddingBottom: "24px" }} maxWidth='md'>
-			<Typography gutterBottom variant='h3' component='h2'>
-				마이페이지
-			</Typography>
-			<Grid container spacing={4}>
+		<Container sx={{ paddingTop: "24x", paddingBottom: "24px" }} maxWidth='md'>
+			<Grid container spacing={1}>
+				<Typography
+					noWrap
+					gutterBottom
+					variant='h3'
+					component='h2'
+					sx={{ paddingTop: "42px" }}>
+					마이페이지
+				</Typography>
 				<StockList dataArr={nftList} />
 			</Grid>
 		</Container>
