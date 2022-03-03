@@ -35,19 +35,13 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-	createData("Cupcake", 305, 3.7, 67, 4.3),
-	createData("Donut", 452, 25.0, 51, 4.9),
-	createData("Eclair", 262, 16.0, 24, 6.0),
-	createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-	createData("Gingerbread", 356, 16.0, 49, 3.9),
-	createData("Honeycomb", 408, 3.2, 87, 6.5),
-	createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-	createData("Jelly Bean", 375, 0.0, 94, 0.0),
-	createData("KitKat", 518, 26.0, 65, 7.0),
-	createData("Lollipop", 392, 0.2, 98, 0.0),
-	createData("Marshmallow", 318, 0, 81, 2.0),
-	createData("Nougat", 360, 19.0, 9, 37.0),
-	createData("Oreo", 437, 18.0, 63, 4.0),
+	createData("컬리", 305, 30, 67, 4.3),
+	createData("쏘카", 452, 12, 51, 4.9),
+	createData("비바리퍼블리카", 421, 16.0, 24, 6.0),
+	createData("야놀자", 159, 8, 24, 4.0),
+	createData("케이뱅크", 356, 15, 49, 3.9),
+	createData("빗썸", 408, 41, 87, 6.5),
+	createData("두나무", 237, 10, 37, 4.3),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -85,19 +79,19 @@ const headCells = [
 		id: "name",
 		numeric: false,
 		disablePadding: false,
-		label: "Dessert ",
+		label: "종목명",
 	},
 	{
 		id: "calories",
 		numeric: true,
 		disablePadding: false,
-		label: "Calories",
+		label: "일일 거래 건수",
 	},
 	{
 		id: "fat",
 		numeric: true,
 		disablePadding: false,
-		label: "Fat (g)",
+		label: "평균 가격 (NEAR)",
 	},
 	{
 		id: "carbs",

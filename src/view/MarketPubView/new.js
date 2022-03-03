@@ -41,27 +41,27 @@ export default function New() {
 
 const itemData = [
 	{
-		img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-		title: "Breakfast",
-		author: "@bkristastucchio",
+		img: "/static/images/logo/socar.png",
+		title: "쏘카",
+		author: "socar",
 		rows: 2,
 		cols: 2,
 		featured: true,
 	},
 	{
-		img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-		title: "Burger",
-		author: "@rollelflex_graphy726",
+		img: "/static/images/logo/kurly.png",
+		title: "컬리",
+		author: "kurly",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-		title: "Camera",
-		author: "@helloimnik",
+		img: "/static/images/logo/yanolja.png",
+		title: "야놀자",
+		author: "yanolja",
 	},
 	{
-		img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-		title: "Coffee",
-		author: "@nolanissac",
+		img: "/static/images/logo/toss.png",
+		title: "비바리퍼블리카",
+		author: "toss",
 		cols: 2,
 	},
 ];
