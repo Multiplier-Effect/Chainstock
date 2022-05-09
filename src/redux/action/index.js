@@ -89,7 +89,6 @@ class NearClient {
 	login = () => {
 		if (!this.wallet) {
 			throw Error("not initial near blockchain");
-			console.log("ch", this);
 		}
 		this.wallet.requestSignIn();
 	};
@@ -134,7 +133,7 @@ export const getNftList = () => async (dispatch) => {
 	const nftList = [];
 	for (let i = 2; i <= 25; i++) {
 		const res = await contract.nft_token({ token_id: i.toString() });
-		console.log("res", res);
+		// console.log("res", res);
 		nftList.push({ ...res, i });
 	}
 	console.log("list: ", nftList);
@@ -204,4 +203,20 @@ export const registerNft = (payload) => async (dispatch) => {
 		type: types.LOADING,
 		payload: false,
 	});
+};
+
+export const payment = async (user, token_id, approval_id, pay) => {
+	const contract = nearClient.getContract();
+	const GAS = 200000000000000;
+	const deposit = parseNearAmount(pay);
+	console.log("ttt:", token_id);
+	await contract.nft_transfer(
+		{
+			receiver_id: user,
+			token_id: token_id,
+			approval_id: approval_id,
+		},
+		GAS,
+		deposit
+	);
 };

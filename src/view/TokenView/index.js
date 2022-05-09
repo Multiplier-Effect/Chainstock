@@ -17,14 +17,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const TokenView = (props) => {
+const TokenView = (props, state) => {
 	const { nftList } = props;
 	const linkId = useParams().id;
 	const classes = useStyles();
-	console.log(nftList);
+	// console.log("dddd", state);
 
 	const tokenData = nftList.find((el) => el.token_id === linkId);
-	console.log("tokenData: ", tokenData);
+	// console.log("tokenData: ", tokenData);
 
 	return (
 		<Container className={classes.root}>
@@ -36,7 +36,7 @@ const TokenView = (props) => {
 					/>
 				</Grid>
 				<Grid item lg={6} md={6} xs={12}>
-					<InfoNft nft={tokenData} />
+					<InfoNft nft={tokenData} wallet={state} />
 				</Grid>
 			</Grid>
 		</Container>
@@ -45,6 +45,7 @@ const TokenView = (props) => {
 
 const mapStateToProps = (state) => ({
 	nftList: state.app.nftList,
+	wallet: state.app.wallet,
 });
 
 export default connect(mapStateToProps)(TokenView);

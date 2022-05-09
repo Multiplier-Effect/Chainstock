@@ -7,9 +7,16 @@ import CardHeader from "@material-ui/core/CardHeader";
 import { Typography } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
+import { payment } from "../../redux/action";
 
-const InfoNft = (props) => {
+const InfoNft = (props, wallet) => {
 	const { nft } = props;
+	// console.log("st", wallet);
+	console.log("st", nft.metadata);
+	const buy = () => {
+		console.log("st", nft.metadata);
+		payment(nft.owner_id, nft.metadata.token_id, 1, nft.metadata.extra);
+	};
 	return (
 		<Card>
 			<CardHeader title='Information' subheader='NFT token' />
@@ -27,7 +34,7 @@ const InfoNft = (props) => {
 			<CardActions style={{ flexDirection: "column" }}>
 				<Button
 					color='primary'
-					// disabled={isSubmitting}
+					onClick={buy}
 					size='large'
 					type='submit'
 					variant='contained'>
