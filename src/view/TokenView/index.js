@@ -24,6 +24,17 @@ const TokenView = (props, state) => {
 
 	const tokenData = nftList.find((el) => el.token_id === linkId);
 
+	console.log("list:", nftList);
+
+	const resultArr = nftList.filter((i) => {
+		if (tokenData.metadata.title == i.metadata.title) {
+			return i;
+		}
+	});
+	console.log("resultArr: ", resultArr);
+	//resultArr.owner_id
+	//customner profile 보여주기 가능
+
 	return (
 		<Container className={classes.root}>
 			<Grid container spacing={3}>
