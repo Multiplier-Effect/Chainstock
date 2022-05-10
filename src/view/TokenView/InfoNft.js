@@ -12,10 +12,10 @@ import { payment } from "../../redux/action";
 const InfoNft = (props, wallet) => {
 	const { nft } = props;
 	// console.log("st", wallet);
-	console.log("st", nft.metadata);
+	console.log("st", nft);
 	const buy = () => {
 		console.log("st", nft.metadata);
-		payment(nft.owner_id, nft.metadata.token_id, 1, nft.metadata.extra);
+		payment(nft.owner_id, nft.token_id, 0, nft.metadata.extra);
 	};
 	return (
 		<Card>

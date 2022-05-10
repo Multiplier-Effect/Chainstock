@@ -21,10 +21,8 @@ const TokenView = (props, state) => {
 	const { nftList } = props;
 	const linkId = useParams().id;
 	const classes = useStyles();
-	// console.log("dddd", state);
 
 	const tokenData = nftList.find((el) => el.token_id === linkId);
-	// console.log("tokenData: ", tokenData);
 
 	return (
 		<Container className={classes.root}>

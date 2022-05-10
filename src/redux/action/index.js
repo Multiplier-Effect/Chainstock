@@ -3,7 +3,10 @@
 import types from "../constants";
 import * as nearAPI from "near-api-js";
 import { Contract, WalletConnection } from "near-api-js";
-import { parseNearAmount } from "near-api-js/lib/utils/format";
+import {
+	parseNearAmount,
+	formatNearAmount,
+} from "near-api-js/lib/utils/format";
 import { NFTStorage, File } from "nft.storage";
 
 const contractName = "dev-1642578662049-35854783086806";
@@ -208,11 +211,10 @@ export const registerNft = (payload) => async (dispatch) => {
 export const payment = async (user, token_id, approval_id, pay) => {
 	const contract = nearClient.getContract();
 	const GAS = 200000000000000;
-	const deposit = parseNearAmount(pay);
-	console.log("ttt:", token_id);
+	const deposit = formatNearAmount("1000000000000000000000000");
 	await contract.nft_transfer(
 		{
-			receiver_id: user,
+			receiver_id: "chain-stock.testnet",
 			token_id: token_id,
 			approval_id: approval_id,
 		},
