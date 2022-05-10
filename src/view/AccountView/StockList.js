@@ -1,5 +1,5 @@
 /** @format */
-
+import { useEffect, useCallback } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -14,12 +14,18 @@ import Link from "@material-ui/core/Link";
 import { FavoriteBorder as FavoriteBorderIcon } from "@material-ui/icons";
 
 const StockList = (props) => {
-	const { dataArr } = props;
+	const { dataArr, wallet } = props;
+
+	const resultArr = dataArr.filter((i) => {
+		if (wallet == i.owner_id) {
+			return i;
+		}
+	});
 
 	return (
 		<>
 			<Grid container spacing={4}>
-				{dataArr.map((el, i) => (
+				{resultArr.map((el, i) => (
 					<Grid item key={i} xs={6} sm={4} md={3}>
 						<Card
 							sx={{ height: "100%", display: "flex", flexDirection: "column" }}>

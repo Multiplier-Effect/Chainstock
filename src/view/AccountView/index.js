@@ -14,14 +14,13 @@ const client = new NFTStorage({
 	token: process.env.REACT_APP_NFT_STORAGE_API_KEY,
 });
 
-console.log(client);
-
 const AccountView = (props) => {
 	console.log("p: ", props);
 	const { wallet, nftList, getNftList } = props;
 
 	const getNftListAccount = useCallback(async () => {
 		await getNftList();
+		console.log("wallet: ", wallet._authData.accountId);
 	}, [getNftList]);
 
 	useEffect(() => {
@@ -39,7 +38,7 @@ const AccountView = (props) => {
 					sx={{ paddingTop: "42px" }}>
 					마이페이지
 				</Typography>
-				<StockList dataArr={nftList} />
+				<StockList dataArr={nftList} wallet={wallet._authData.accountId} />
 			</Grid>
 		</Container>
 	);
