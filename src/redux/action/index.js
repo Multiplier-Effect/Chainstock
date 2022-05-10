@@ -134,7 +134,7 @@ export const getNftList = () => async (dispatch) => {
 	console.log("nft_tokens: ", test);
 
 	const nftList = [];
-	for (let i = 2; i <= 25; i++) {
+	for (let i = 26; i <= 55; i++) {
 		const res = await contract.nft_token({ token_id: i.toString() });
 		// console.log("res", res);
 		nftList.push({ ...res, i });
