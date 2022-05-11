@@ -15,7 +15,7 @@ import { FavoriteBorder as FavoriteBorderIcon } from "@material-ui/icons";
 import Stack from "@mui/material/Stack";
 
 const Charts = (props) => {
-	const { dataArr, wallet } = props;
+	const { dataArr, wallet, salesArr } = props;
 	let count = 0;
 	const resultArr = dataArr.filter((i) => {
 		if (wallet == i.owner_id) {
@@ -25,30 +25,38 @@ const Charts = (props) => {
 	});
 
 	return (
-		<Stack direction='row' spacing={20}>
-			<Card sx={{ minWidth: 300 }}>
-				<CardContent>
-					<Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
-						보유 비상장 주식 수
-					</Typography>
-					<Typography variant='h2' component='div' gutterBottom>
-						{count}
-					</Typography>
-					<Typography color='text.secondary'>{wallet}</Typography>
-				</CardContent>
-			</Card>
-			<Card sx={{ minWidth: 300 }}>
-				<CardContent>
-					<Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
-						판매 중인 비상장 주식 수
-					</Typography>
-					<Typography variant='h2' component='div'>
-						0
-					</Typography>
-					<Typography color='text.secondary'>{wallet}</Typography>
-				</CardContent>
-			</Card>
-		</Stack>
+		<>
+			<Stack direction='row' spacing={20}>
+				<Card sx={{ minWidth: 300 }}>
+					<CardContent>
+						<Typography
+							sx={{ fontSize: 14 }}
+							color='text.secondary'
+							gutterBottom>
+							보유 비상장 주식 수
+						</Typography>
+						<Typography variant='h2' component='div' gutterBottom>
+							{count}
+						</Typography>
+						<Typography color='text.secondary'>{wallet}</Typography>
+					</CardContent>
+				</Card>
+				<Card sx={{ minWidth: 300 }}>
+					<CardContent>
+						<Typography
+							sx={{ fontSize: 14 }}
+							color='text.secondary'
+							gutterBottom>
+							판매 중인 비상장 주식 수
+						</Typography>
+						<Typography variant='h2' component='div'>
+							0
+						</Typography>
+						<Typography color='text.secondary'>{wallet}</Typography>
+					</CardContent>
+				</Card>
+			</Stack>
+		</>
 	);
 };
 

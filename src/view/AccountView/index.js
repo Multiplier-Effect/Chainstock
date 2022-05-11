@@ -1,7 +1,7 @@
 /** @format */
 
 import { NFTStorage } from "nft.storage";
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { connect } from "react-redux";
 import { getNftList } from "../../redux/action";
 
@@ -9,18 +9,32 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import StockList from "./StockList";
 import Charts from "./Charts";
+import SaleList from "./SaleList";
 
 const AccountView = (props) => {
 	const { wallet, nftList, getNftList } = props;
+	const [rerender, setRerender] = useState(false);
 
 	const getNftListAccount = useCallback(async () => {
 		await getNftList();
-		console.log("wallet: ", wallet._authData.accountId);
 	}, [getNftList]);
+
+	const salesArr = [];
 
 	useEffect(() => {
 		getNftListAccount();
 	}, [getNftListAccount]);
+
+	const resultArr = nftList.filter((i) => {
+		if (wallet._authData.accountId == i.owner_id) {
+			return i;
+		}
+	});
+
+	// useEffect(() => {
+	// 	setRerender(!rerender);
+	// 	console.log(rerender);
+	// }, [salesArr]);
 
 	return (
 		<Container sx={{ paddingTop: "24x", paddingBottom: "24px" }} maxWidth='md'>
@@ -47,9 +61,15 @@ const AccountView = (props) => {
 				variant='h3'
 				component='h3'
 				sx={{ paddingTop: "42px", paddingBottom: "24px" }}>
-				보유 비상장주식
+				보유 중인 비상장주식
 			</Typography>
-			<StockList dataArr={nftList} wallet={wallet._authData.accountId} />
+			<StockList
+				salesArr={salesArr}
+				dataArr={resultArr}
+				wallet={wallet._authData.accountId}
+			/>
+
+			{/* <SaleList salesArr={salesArr} /> */}
 		</Container>
 	);
 };
