@@ -40,11 +40,6 @@ const items = [
 		icon: UserIcon,
 		title: "My page",
 	},
-	{
-		href: "/create",
-		icon: FilePlusIcon,
-		title: "Create Stock",
-	},
 ];
 
 const DashboardSidebar = ({ onMobileClose, openMobile, logout }) => {
