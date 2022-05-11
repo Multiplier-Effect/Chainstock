@@ -7,6 +7,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import MediaNft from "./MediaNft";
 import InfoNft from "./InfoNft";
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -31,24 +32,55 @@ const TokenView = (props, state) => {
 			return i;
 		}
 	});
-	console.log("resultArr: ", resultArr);
+	console.log("resultArr: ", resultArr.length);
 	//resultArr.owner_id
+	//https://explorer.testnet.near.org/accounts/chainstock.testnet
 	//customner profile 보여주기 가능
 
+	const columns: GridColDef[] = [
+		{ field: "id", headerName: "ID", width: 70 },
+		{ field: "Name", headerName: "주주명", width: 230 },
+		{ field: "transaction", headerName: "거래 증명서", width: 500 },
+	];
+	const row = [];
+
+	for (let i = 0; i < resultArr.length; i++) {
+		row.push({
+			id: i,
+			Name: resultArr[i].owner_id,
+			transaction: `https://explorer.testnet.near.org/accounts/${resultArr[i].owner_id}`,
+		});
+		console.log(row);
+	}
+
 	return (
-		<Container className={classes.root}>
-			<Grid container spacing={3}>
-				<Grid item lg={6} md={6} xs={12}>
-					<MediaNft
-						img={tokenData.metadata.media}
-						title={tokenData.metadata.title}
+		<>
+			<Container className={classes.root}>
+				<Grid container spacing={3}>
+					<Grid item lg={6} md={6} xs={12}>
+						<MediaNft
+							img={tokenData.metadata.media}
+							title={tokenData.metadata.title}
+						/>
+					</Grid>
+					<Grid item lg={6} md={6} xs={12}>
+						<InfoNft nft={tokenData} wallet={state} />
+					</Grid>
+				</Grid>
+			</Container>
+			<Container>
+				<h1>주주 명부</h1>
+				<br />
+				<div style={{ height: 400, width: "100%", margin: 10 }}>
+					<DataGrid
+						rows={row}
+						columns={columns}
+						pageSize={5}
+						rowsPerPageOptions={[5]}
 					/>
-				</Grid>
-				<Grid item lg={6} md={6} xs={12}>
-					<InfoNft nft={tokenData} wallet={state} />
-				</Grid>
-			</Grid>
-		</Container>
+				</div>
+			</Container>
+		</>
 	);
 };
 
