@@ -5,17 +5,12 @@ import { useEffect, useCallback } from "react";
 import { connect } from "react-redux";
 import { getNftList } from "../../redux/action";
 
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import StockList from "./StockList";
-
-const client = new NFTStorage({
-	token: process.env.REACT_APP_NFT_STORAGE_API_KEY,
-});
+import Charts from "./Charts";
 
 const AccountView = (props) => {
-	console.log("p: ", props);
 	const { wallet, nftList, getNftList } = props;
 
 	const getNftListAccount = useCallback(async () => {
@@ -29,17 +24,32 @@ const AccountView = (props) => {
 
 	return (
 		<Container sx={{ paddingTop: "24x", paddingBottom: "24px" }} maxWidth='md'>
-			<Grid container spacing={1}>
-				<Typography
-					noWrap
-					gutterBottom
-					variant='h3'
-					component='h2'
-					sx={{ paddingTop: "42px" }}>
-					마이페이지
-				</Typography>
-				<StockList dataArr={nftList} wallet={wallet._authData.accountId} />
-			</Grid>
+			<Typography
+				noWrap
+				gutterBottom
+				variant='h1'
+				component='h1'
+				sx={{ paddingTop: "42px" }}>
+				마이페이지
+			</Typography>
+			<Typography
+				noWrap
+				gutterBottom
+				variant='h3'
+				component='h3'
+				sx={{ paddingTop: "42px", paddingBottom: "24px" }}>
+				보유 주식 현황
+			</Typography>
+			<Charts dataArr={nftList} wallet={wallet._authData.accountId} />
+			<Typography
+				noWrap
+				gutterBottom
+				variant='h3'
+				component='h3'
+				sx={{ paddingTop: "42px", paddingBottom: "24px" }}>
+				보유 비상장주식
+			</Typography>
+			<StockList dataArr={nftList} wallet={wallet._authData.accountId} />
 		</Container>
 	);
 };

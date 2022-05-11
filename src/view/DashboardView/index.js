@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { getNftList } from "../../redux/action";
 import Container from "@material-ui/core/Container";
 import Album from "./Album";
-import StockList from "../AccountView/StockList";
+import Typography from "@material-ui/core/Typography";
 
 const DashboardView = (props) => {
 	const { wallet, nftList, getNftList } = props;
@@ -20,7 +20,9 @@ const DashboardView = (props) => {
 
 	return (
 		<Container sx={{ paddingTop: "24px", paddingBottom: "24px" }} maxWidth='md'>
-			<h1>구매 가능 비상장 주식</h1>
+			<Typography noWrap gutterBottom variant='h1' component='h1'>
+				구매 가능 비상장 주식
+			</Typography>
 			{Array.isArray(nftList) && nftList.length > 0 && (
 				<Album dataArr={nftList} />
 			)}
