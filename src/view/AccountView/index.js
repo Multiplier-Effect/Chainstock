@@ -54,15 +54,8 @@ const AccountView = (props) => {
 				sx={{ paddingTop: "42px", paddingBottom: "24px" }}>
 				보유 주식 현황
 			</Typography>
-			<Charts dataArr={nftList} wallet={wallet._authData.accountId} />
-			<Typography
-				noWrap
-				gutterBottom
-				variant='h3'
-				component='h3'
-				sx={{ paddingTop: "42px", paddingBottom: "24px" }}>
-				보유 중인 비상장주식
-			</Typography>
+			{/* <Charts dataArr={nftList} wallet={wallet._authData.accountId} /> */}
+
 			<StockList
 				salesArr={salesArr}
 				dataArr={resultArr}
