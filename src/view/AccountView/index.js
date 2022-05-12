@@ -8,8 +8,6 @@ import { getNftList } from "../../redux/action";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import StockList from "./StockList";
-import Charts from "./Charts";
-import SaleList from "./SaleList";
 
 const AccountView = (props) => {
 	const { wallet, nftList, getNftList } = props;

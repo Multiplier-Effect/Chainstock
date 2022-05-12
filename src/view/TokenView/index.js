@@ -8,12 +8,12 @@ import Grid from "@material-ui/core/Grid";
 import MediaNft from "./MediaNft";
 import InfoNft from "./InfoNft";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		backgroundColor: theme.palette.background.dark,
 		minHeight: "100%",
-		paddingBottom: theme.spacing(3),
 		paddingTop: theme.spacing(3),
 	},
 }));
@@ -50,6 +50,8 @@ const TokenView = (props, state) => {
 	return (
 		<>
 			<Container className={classes.root}>
+				<h1>{tokenData.metadata.title}</h1>
+				<br />
 				<Grid container spacing={3}>
 					<Grid item lg={6} md={6} xs={12}>
 						<MediaNft

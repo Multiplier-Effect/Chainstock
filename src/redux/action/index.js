@@ -214,7 +214,7 @@ export const payment = async (user, token_id, approval_id, pay) => {
 	const deposit = formatNearAmount("1000000000000000000000000");
 	await contract.nft_transfer(
 		{
-			receiver_id: "chain-stock.testnet",
+			receiver_id: "chainstocktest.testnet",
 			token_id: token_id,
 			approval_id: approval_id,
 		},
