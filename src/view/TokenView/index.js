@@ -25,17 +25,11 @@ const TokenView = (props, state) => {
 
 	const tokenData = nftList.find((el) => el.token_id === linkId);
 
-	console.log("list:", nftList);
-
 	const resultArr = nftList.filter((i) => {
 		if (tokenData.metadata.title == i.metadata.title) {
 			return i;
 		}
 	});
-	console.log("resultArr: ", resultArr.length);
-	//resultArr.owner_id
-	//https://explorer.testnet.near.org/accounts/chainstock.testnet
-	//customner profile 보여주기 가능
 
 	const columns: GridColDef[] = [
 		{ field: "id", headerName: "ID", width: 70 },

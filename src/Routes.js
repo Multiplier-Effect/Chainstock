@@ -38,12 +38,6 @@ const Routes = (props) => {
 					component={AccountView}
 					layout={DashboardLayout}
 				/>
-				{/* <RouteWithLayout
-					path='/create'
-					exact
-					component={CreateTokenView}
-					layout={DashboardLayout}
-				/> */}
 				<RouteWithLayout
 					path='/token/:id'
 					exact
