@@ -4,7 +4,7 @@
 
 ## ChainStock를 소개합니다!
 
-ChainStock은 비상장주식 중 비통일주식의 복잡한 거래방식과 주식 소유자 위변조 문제를 해결하는 블록체인 기반 비상장주식 거래 플랫폼입니다.
+ChainStock은 비상장주식 중 비통일주식의 복잡한 거래방식과 주식 소유자 위변조 문제를 해결하는 블록체인 기반 비상장주식 거래 플랫폼입니다. 
 
 현재 투자자들의 많은 관심을 받고 있는 비상장주식은 거래 규모와 그 가치가 점점 더 커지고 있으나 비상장주식을 거래하는 데에는 많은 서류와 절차가 필요한 상황입니다. 또한 비상장주식의 소유자를 확인할 수 있는 방법이 시스템화 되어 있지 않아 양도자의 소유권 확인 역시 복잡하고 위변조 가능성이 있습니다. ChainStock은 블록체인을 통해 거래내역을 기록하고 소유권을 증명하여 이러한 불편함과 위험성을 없앴습니다.
 
@@ -26,11 +26,11 @@ NFT는 ‘대체 불가능한 토큰’으로 희소성을 가진 디지털 자�
 
 **ERC721 기반 Smart Contract**
 
-한 주 단위로 구성되어있는 주식의 특성과 맞게 비통일주식을 스마트 컨트랙트를 통해 ERC721 표준을 따른 NFT 토큰으로 발행하고 거래하는 형태로 구현합니다.
+한 주 단위로 구성되어있는 주식의 특성과 맞게 비통일주식을 스마트 컨트랙트를 통해 ERC721 표준을 따른 NFT 토큰으로 발행하고 거래하는 형태로 구현합니다. 
 
-스마트 컨트랙트 주요 기능은
+스마트 컨트랙트 주요 기능은 
 
-1. 비통일 주식을 NFT로 만들기 위해 발행하고 `approve` 과정을 거치기
+1. 비통일 주식을 NFT로 만들기 위해 발행하고 `approve` 과정을 거치기 
 
 2. 비통일 주식을 토큰으로 구매하고 사용자 간 `transfer`를 구현하기 입니다.
 
@@ -54,104 +54,58 @@ NFT는 ‘대체 불가능한 토큰’으로 희소성을 가진 디지털 자�
 
 **비통일주식 거래 장부화 및 투명화**
 
-블록체인 기술의 장점을 이용해 21세기에 맞지 않는 거래 과정이 수기로 이루어지는 복잡하고 불투명했던 방식을 간편하고 투명하게 디지털화시켜 변화시킬 수 있습니다.
+블록체인 기술의 장점을 이용해 21세기에 맞지 않는 거래 과정이 수기로 이루어지는 복잡하고 불투명했던 방식을 간편하고 투명하게 디지털화시켜 변화시킬 수 있습니다. 
 
 ## 개인 사용자를 위한 사용설명서
 
 ### 1. 회원가입 / 로그인
 
-1-1. 아이디와 비밀번호를 설정하여 계정을 생성합니다.
+ChainStock은 NEAR Protocol 공식 wallet을 사용하여 로그인합니다.
 
-![회원가입 - STEP 1](https://user-images.githubusercontent.com/56113089/144750185-c16dd779-f390-4a49-9f86-62bd6f0d8931.png)
+1-1. [https://wallet.near.org](https://wallet.near.org/) NEAR Protocol 공식 월렛 홈페이지에서 자신의 지갑을 생성합니다.
 
-1-2. 특정금융정보이용법에 따라 신원 확인을 진행해주세요.
+![스크린샷 2022-05-26 오후 10.38.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4b635c08-158b-4900-9706-9e7acf25477d/스크린샷_2022-05-26_오후_10.38.16.png)
 
-![회원가입 - STEP 2](https://user-images.githubusercontent.com/56113089/144750189-640f52ed-314f-47a5-84fc-f010031d27c5.png)
+1-2. 지갑 생성이 완료되었다면 메인화면 오른쪽 상단의 버튼을 눌러 NEAR wallet에 로그인해주세요.
 
-1-3. 회원가입이 완료되었다면 로그인해주세요.
+![스크린샷 2022-05-26 오후 10.40.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/56f72a76-6e1a-4a02-8f28-e0d2036617ab/스크린샷_2022-05-26_오후_10.40.23.png)
 
-![로그인](https://user-images.githubusercontent.com/56113089/144750196-8fdac98e-e499-4e69-9ef7-3bfd9bec2939.png)
+### 2. 종목 확인
 
-### 2. 메인화면
+- 로그인시 바로 만날 수 있는 페이지 입니다.
+- 왼쪽 메뉴바에서 'Market'을 눌러서도 다음과 같이 전체 기업 종목 확인을 할 수 있습니다.
+- 구매가능한 주식의 이름과 가격, 소유주를 확인할 수 있습니다.
+- 각 주식의 ‘view’를 누르면 각 매물의 상세페이지로 이동하게 됩니다.
 
-- 회원가입 후 로그인을 완료하면 다음과 같은 메인화면을 만날 수 있습니다.
-- 새로운 종목과 거래가 많은 인기 종목을 확인할 수 있습니다.
-- 왼쪽의 메뉴바를 통해 'Market'과 'Mypage'로 이동할 수 있습니다.
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af6a9505-fb26-4411-8fc9-eec388a371d1/Untitled.png)
 
-![MainPage](https://user-images.githubusercontent.com/56113089/144750222-5c570f55-622c-4574-8ece-4f6ec71c3d77.png)
+### 3. 주식 구매
 
-### 3. 종목 확인
+- 2에서 view를 누르면 볼 수 있는 매물의 상세 페이지입니다.
+- 구매하고자 하는 주식의 기업정보와 소유자, 가격을 볼 수 있습니다.
+- 구매하기 버튼을 클릭하면 해당 매물을 구매할 수 있는 페이지로 이동합니다.
+- 구매 페이지에서 Approve를 누르면 구매가 완료됩니다.
 
-- 왼쪽 메뉴바에서 'Market'을 누르면 다음과 같이 전체 기업 종목 확인을 할 수 있습니다.
-- 기업명이나 키워드를 통해 기업을 검색할 수 있습니다.
-- 기업의 이름, 기업 가치, 기업의 짧은 설명, 최근 거래 시점, 최저 가격을 확인할 수 있습니다.
-- '보유중인 기업 확인하기' 버튼을 누르면 마이페이지로 이동하게 됩니다.
-- 각 기업 박스를 누르면 각 기업의 상세 페이지로 이동하게 됩니다.
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97f0d09a-7547-4525-a146-da61521442e3/Untitled.png)
 
-![Market](https://user-images.githubusercontent.com/56113089/144750229-ab55bdf0-0648-4ff2-b668-49955009c051.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85311129-1c45-4515-b233-e1df44b5c3e2/Untitled.png)
 
-### 4. 기업 상세 페이지 / 종목 구매
+### 4. 마이페이지 / 종목 판매
 
-- 3에서 기업 박스를 누르면 다음과 같은 화면을 볼 수 있습니다.
-- 해당 기업 매물을 아래에서 확인할 수 있고, 종목명, 가격, 등록일, 등록 번호로 이루어져 있습니다.
-- 낮은 가격순, 높은 가격순, 등록일 순으로 정렬이 가능합니다.
-- 매물의 아무 부분이나 클릭하면 해당 매물을 구매할 수 있는 팝업이 생성됩니다.
-
-![Detail](https://user-images.githubusercontent.com/56113089/144750236-f756e25f-b508-41aa-a1b3-314916003f7c.png)
-
-### 5. 마이페이지 / 종목 판매
-
-- 왼쪽 메뉴바의 'MyPage'를 누르거나 종목 확인 페이지에서 '보유중인 기업 확인하기' 버튼을 누르면 본 화면으로 이동할 수 있습니다.
-- 보유 중인 주식 목록을 확인할 수 있으며 거래 일자와 구매 가격, 구매 영수증을 확인할 수 있습니다.
+- 왼쪽 메뉴바의 'MyPage'를 누르면 본 화면으로 이동할 수 있습니다.
+- 보유 중인 주식 목록과 현재 판매중인 주식 목록을 확인할 수 있습니다.
 - 보유 중인 주식 목록에서 판매 버튼을 누르면 판매할 수 있는 팝업이 생성됩니다.
-- 판매 중인 주식 목록에서 현재 내가 판매하고 있는 주식의 펀매 등록 일자와, 구매 가격, 판매 가격을 확인할 수 있습니다.
 
-![마이페이지](https://user-images.githubusercontent.com/56113089/144750249-f2d1495f-38bc-443d-ada7-f9458660f1d3.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e02eb860-adc8-4798-a8f3-0d76f11bf1ef/Untitled.png)
 
-- '구매 영수증' 칸을 누르면 다음과 같이 NEAR transaction을 확인할 수 있는 페이지로 이동하게 된다.
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4845ddbe-435d-479d-9464-e9ecac343eff/Untitled.png)
 
-![Untitled](https://user-images.githubusercontent.com/56113089/144750259-6d5967a6-fdcf-40c2-b944-a15a196bb793.png)
+### 5. 주주 명부 확인
 
-## 기업 사용자를 위한 설명서
+- 주식을 소유 중인 사람들과 그 거래를 증명하는 거래 증명서를 확인할 수 있습니다.
 
-### 1. 회원가입 / 로그인
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/849811fc-0329-4b4a-848d-c9e1f31afc1d/Untitled.png)
 
-1-1. 회원가입 페이지에서 아래의 기업용 계정 만들기 버튼을 눌러 아이디와 비밀번호를 설정하여 계정을 생성해주세요.
+- '거래 증명서' 칸을 누르면 다음과 같이 실제 NEAR transaction을 확인할 수 있는 페이지로 이동하게 됩니다.
 
-![회원가입 - STEP 1](https://user-images.githubusercontent.com/56113089/144750268-7cdd88e8-d41f-49ad-a82f-0c6689e252e6.png)
-
-1-2. 특정금융정보이용법에 따라 신원 확인을 진행해주세요.
-
-![회원가입 - STEP 2](https://user-images.githubusercontent.com/56113089/144750279-67840a14-515a-456a-8ef6-468fcf9fb1f9.png)
-
-1-3. 회원가입이 완료되었다면 로그인해주세요.
-
-![로그인](https://user-images.githubusercontent.com/56113089/144750287-8f94e329-4471-42ef-b77b-6a8a58b3f35e.png)
-
-### 2. Home 화면
-
-- 회원가입 후 로그인을 완료하면 다음과 같은 메인화면을 만날 수 있습니다.
-- 새로운 종목과 거래가 많은 인기 종목을 확인할 수 있습니다.
-- 왼쪽의 메뉴바를 통해 'Market'과 'Mypage'로 이동할 수 있습니다.
-
-![MainPage_기업](https://user-images.githubusercontent.com/56113089/144750293-131c8741-65dc-4b51-abe9-0b76e8535838.png)
-
-### 3. MyPage - 주주명부 확인
-
-- 왼쪽 메뉴바의 'MyPage'를 누르면 기업 정보를 관리할 수 있는 본 페이지로 이동할 수 있습니다.
-- 본 페이지에서 기업의 주식을 보유하고 있는 주주명부를 확인할 수 있습니다.
-- 지분율 순, 구매일자 순, 주주명 순으로 정렬할 수 있습니다.
-- '주주명부 출력하기' 버튼을 통해 아래의 주주명부를 출력하여 저장할 수 있습니다.
-- '내 기업 상세페이지 바로가기' 버튼을 통해 기업의 마켓 상세 페이지로 이동할 수 있습니다.
-
-![주주명부 관리 페이지](https://user-images.githubusercontent.com/56113089/144750299-1b70e4a4-b0d5-46d9-8401-a5d679c8b0b9.png)
-
-- '거래 영수증' 칸을 누르면 다음과 같이 NEAR transaction을 확인할 수 있는 페이지로 이동하게 된다.
-
-![Untitled](https://user-images.githubusercontent.com/56113089/144750307-8255f2f2-d1b6-4062-bbc1-b82fcbef5f68.png)
-
-### 4. 기업 매물 확인
-
-- 개인 사용자와 마찬가지로 Market에서 나의 기업을 클릭하면 다음과 같이 기업의 매물을 확인할 수 있고, MyPage에서의 '내 기업 상세페이지 바로가기' 버튼을 통해서도 이동할 수 있습니다.
-
-![Detail_기업](https://user-images.githubusercontent.com/56113089/144750317-54e73056-f436-4bd7-9616-ef963ac10fd8.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2e13b25c-a656-45c5-a8bb-1e12f0a53675/Untitled.png)
