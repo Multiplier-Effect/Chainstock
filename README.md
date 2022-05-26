@@ -6,7 +6,7 @@
 
 ChainStock은 비상장주식 중 비통일주식의 복잡한 거래방식과 주식 소유자 위변조 문제를 해결하는 블록체인 기반 비상장주식 거래 플랫폼입니다. 
 
-현재 투자자들의 많은 관심을 받고 있는 비상장주식은 거래 규모와 그 가치가 점점 더 커지고 있으나 비상장주식을 거래하는 데에는 많은 서류와 절차가 필요한 상황입니다. 또한 비상장주식의 소유자를 확인할 수 있는 방법이 시스템화 되어 있지 않아 양도자의 소유권 확인 역시 복잡하고 위변조 가능성이 있습니다. ChainStock은 블록체인을 통해 거래내역을 기록하고 소유권을 증명하여 이러한 불편함과 위험성을 없앴습니다.
+현재 투자자들의 많은 관심을 받고 있는 비상장주식은 거래 규모(2022년 기준 시초 약 34조)와 그 가치가 점점 더 커지고 있으나 비상장주식을 거래하는 데에는 많은 서류와 절차가 필요한 상황입니다. 또한 비상장주식의 소유자를 확인할 수 있는 방법이 시스템화 되어 있지 않아 양도자의 소유권 확인 역시 복잡하고 위변조 가능성이 있습니다. ChainStock은 블록체인을 통해 거래내역을 기록하고 소유권을 증명하여 이러한 불편함과 위험성을 없앴습니다.
 
 ## ChainStock의 기술 소개
 
@@ -64,11 +64,13 @@ ChainStock은 NEAR Protocol 공식 wallet을 사용하여 로그인합니다.
 
 1-1. [https://wallet.near.org](https://wallet.near.org/) NEAR Protocol 공식 월렛 홈페이지에서 자신의 지갑을 생성합니다.
 
-![스크린샷 2022-05-26 오후 10.38.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4b635c08-158b-4900-9706-9e7acf25477d/스크린샷_2022-05-26_오후_10.38.16.png)
+<img width="1280" alt="1111" src="https://user-images.githubusercontent.com/56113089/170502187-74d31815-1569-4140-968f-871adab6c6fd.png">
+
 
 1-2. 지갑 생성이 완료되었다면 메인화면 오른쪽 상단의 버튼을 눌러 NEAR wallet에 로그인해주세요.
 
-![스크린샷 2022-05-26 오후 10.40.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/56f72a76-6e1a-4a02-8f28-e0d2036617ab/스크린샷_2022-05-26_오후_10.40.23.png)
+<img width="1280" alt="2" src="https://user-images.githubusercontent.com/56113089/170502300-0ef01436-71db-4a40-9fce-3b50c41419d1.png">
+
 
 ### 2. 종목 확인
 
@@ -77,7 +79,7 @@ ChainStock은 NEAR Protocol 공식 wallet을 사용하여 로그인합니다.
 - 구매가능한 주식의 이름과 가격, 소유주를 확인할 수 있습니다.
 - 각 주식의 ‘view’를 누르면 각 매물의 상세페이지로 이동하게 됩니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af6a9505-fb26-4411-8fc9-eec388a371d1/Untitled.png)
+![3](https://user-images.githubusercontent.com/56113089/170502484-f3f81e3a-b907-4bb1-a07b-1ad6cd3e982f.png)
 
 ### 3. 주식 구매
 
@@ -86,26 +88,28 @@ ChainStock은 NEAR Protocol 공식 wallet을 사용하여 로그인합니다.
 - 구매하기 버튼을 클릭하면 해당 매물을 구매할 수 있는 페이지로 이동합니다.
 - 구매 페이지에서 Approve를 누르면 구매가 완료됩니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/97f0d09a-7547-4525-a146-da61521442e3/Untitled.png)
+![4](https://user-images.githubusercontent.com/56113089/170502535-db08cf28-cdc1-4d4c-bf0c-bbdb268880bb.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85311129-1c45-4515-b233-e1df44b5c3e2/Untitled.png)
+![5](https://user-images.githubusercontent.com/56113089/170502638-08a89087-1be2-47b8-8c63-9084d1744d02.png)
 
 ### 4. 마이페이지 / 종목 판매
 
 - 왼쪽 메뉴바의 'MyPage'를 누르면 본 화면으로 이동할 수 있습니다.
 - 보유 중인 주식 목록과 현재 판매중인 주식 목록을 확인할 수 있습니다.
 - 보유 중인 주식 목록에서 판매 버튼을 누르면 판매할 수 있는 팝업이 생성됩니다.
+- 
+![6](https://user-images.githubusercontent.com/56113089/170502679-1fe2471e-5a2c-4de0-87df-e2b71755b933.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e02eb860-adc8-4798-a8f3-0d76f11bf1ef/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4845ddbe-435d-479d-9464-e9ecac343eff/Untitled.png)
+![7](https://user-images.githubusercontent.com/56113089/170502692-6c9ec50f-8ed4-4893-815b-404c62930bca.png)
 
 ### 5. 주주 명부 확인
 
 - 주식을 소유 중인 사람들과 그 거래를 증명하는 거래 증명서를 확인할 수 있습니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/849811fc-0329-4b4a-848d-c9e1f31afc1d/Untitled.png)
+![8](https://user-images.githubusercontent.com/56113089/170502736-c5e76343-5a0f-416b-ac6d-ca959f86a3d9.png)
 
 - '거래 증명서' 칸을 누르면 다음과 같이 실제 NEAR transaction을 확인할 수 있는 페이지로 이동하게 됩니다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2e13b25c-a656-45c5-a8bb-1e12f0a53675/Untitled.png)
+![9](https://user-images.githubusercontent.com/56113089/170502762-e51c4ddc-86e5-44d2-bddd-082ca7f307e8.png)
+
+
