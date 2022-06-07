@@ -3,9 +3,9 @@
 # Chainstock
 ## Quick Start
 ### 배포된 데모 웹 사이트 접속 후 실행 - Chrome 최적화
-```
-chainstock.vercel.app
-```
+
+[https://chainstock.vercel.app](https://chainstock.vercel.app)
+
 ### 직접 다운로드 후 실행
 #### 레포지토리 복사
 ```
