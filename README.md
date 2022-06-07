@@ -1,7 +1,23 @@
 <!-- @format -->
 
 # Chainstock
-
+## Quick Start
+### 레포지토리 복사
+```
+git clone https://github.com/Multiplier-Effect/Chainstock
+```
+### 필요 환경 설치
+```
+yarn
+```
+### 프론트엔드 실행
+```
+yarn start
+```
+### 프론트엔드 접속
+```
+https://localhost:3000/
+```
 ## ChainStock를 소개합니다!
 
 ChainStock은 비상장주식 중 비통일주식의 복잡한 거래방식과 주식 소유자 위변조 문제를 해결하는 블록체인 기반 비상장주식 거래 플랫폼입니다. 
