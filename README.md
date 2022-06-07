@@ -2,19 +2,24 @@
 
 # Chainstock
 ## Quick Start
-### 레포지토리 복사
+### 배포된 데모 웹 사이트 접속 후 실행 - Chrome 최적화
+```
+chainstock.vercel.app
+```
+### 직접 다운로드 후 실행
+#### 레포지토리 복사
 ```
 git clone https://github.com/Multiplier-Effect/Chainstock
 ```
-### 필요 환경 설치
+#### 필요 환경 설치
 ```
 yarn
 ```
-### 프론트엔드 실행
+#### 프론트엔드 실행
 ```
 yarn start
 ```
-### 프론트엔드 접속
+#### 프론트엔드 접속
 ```
 https://localhost:3000/
 ```
